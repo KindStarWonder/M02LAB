@@ -6,8 +6,8 @@ function domLoaded() {
   let cfield = document.querySelector("#cInput");
   let ffield = document.querySelector("#fInput");
    button.addEventListener("click", doMath);
-  cfield.addEventListener("click", clearF);
-  ffield.addEventListener("click", clearC);
+  cfield.addEventListener("focus", clearF);
+  ffield.addEventListener("focus", clearC);
   
 }
 
@@ -48,11 +48,11 @@ function doMath(){
       document.querySelector("#fInput").value=rF;
       document.getElementById("errorMessage").innerText = "";
       if(rF<32){
-        document.getElementById("weatherImage").src = "img/cold.png";
+        document.getElementById("weatherImage").src = "cold.png";
       }else if((rF>=32)&&(rF<=50)){
-        document.getElementById("weatherImage").src = "img/cool.png";
+        document.getElementById("weatherImage").src = "cool.png";
       }else if(rF>50){
-        document.getElementById("weatherImage").src = "img/warm.png";
+        document.getElementById("weatherImage").src = "warm.png";
       }
     }
 
@@ -69,11 +69,11 @@ function doMath(){
       document.querySelector("#cInput").value=rC;
       document.getElementById("errorMessage").innerText = "";
        if(rC<0){
-        document.getElementById("weatherImage").src = "img/cold.png";
+        document.getElementById("weatherImage").src = "cold.png";
       }else if((rC>=0)&&(rC<=10)){
-        document.getElementById("weatherImage").src = "img/cool.png";
+        document.getElementById("weatherImage").src = "cool.png";
       }else if(rC>10){
-        document.getElementById("weatherImage").src = "img/warm.png";
+        document.getElementById("weatherImage").src = "warm.png";
       }
     }
 
