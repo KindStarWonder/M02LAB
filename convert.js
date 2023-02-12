@@ -43,6 +43,9 @@ function doMath(){
       //set error message to X is not a number
      // alert(C);  //check if code is entered since I don't have a runtime stepper
       document.getElementById("errorMessage").innerText = Cel+ " is not a number";
+    }else{
+      let rF = convertCtoF(C);
+      document.querySelector("#fInput").value=rF;
     }
 
     
@@ -53,10 +56,12 @@ function doMath(){
       //set error message to X is not a number
       //alert(F);  //check if code is entered since I don't have a runtime stepper
       document.getElementById("errorMessage").innerText = Fah+ " is not a number";
+    }else{
+      let rC = convertFtoC(F);
+      document.querySelector("#cInput").value=rC;
     }
+
   }
-
-
   
 }
 
