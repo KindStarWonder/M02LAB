@@ -6,8 +6,8 @@ function domLoaded() {
   let cfield = document.querySelector("#cInput");
   let ffield = document.querySelector("#fInput");
    button.addEventListener("click", doMath);
-  cfield.addEventListener("keyup", clearF);
-  ffield.addEventListener("keyup", clearC);
+  cfield.addEventListener("click", clearF);
+  ffield.addEventListener("click", clearC);
   
 }
 
@@ -46,6 +46,14 @@ function doMath(){
     }else{
       let rF = convertCtoF(C);
       document.querySelector("#fInput").value=rF;
+      document.getElementById("errorMessage").innerText = "";
+      if(rF<32){
+        document.getElementById("weatherImage").src = "img/cold.png";
+      }else if((rF>=32)&&(rF<=50)){
+        document.getElementById("weatherImage").src = "img/cool.png";
+      }else if(rF>50){
+        document.getElementById("weatherImage").src = "img/warm.png";
+      }
     }
 
     
@@ -59,14 +67,18 @@ function doMath(){
     }else{
       let rC = convertFtoC(F);
       document.querySelector("#cInput").value=rC;
+      document.getElementById("errorMessage").innerText = "";
+       if(rC<0){
+        document.getElementById("weatherImage").src = "img/cold.png";
+      }else if((rC>=0)&&(rC<=10)){
+        document.getElementById("weatherImage").src = "img/cool.png";
+      }else if(rC>10){
+        document.getElementById("weatherImage").src = "img/warm.png";
+      }
     }
 
   }
   
 }
-
-//if statement of temps to change the image with image id tag thing
-
-/*When parseFloat() returns NaN for the temperature to be converted, set errorMessage's innerHTML to the message: "X is not a number", where X is the string from the text input. When parseFloat() returns a valid number, set errorMessage's innerHTML to an empty string. The image below shows a sample error message.*/
 
 /*When the temperature is converted, change the image to reflect the temperature in Fahrenheit. Each image is in the same directory as your .html file. To change the image, change the image's src property to the appropriate filename.*/
